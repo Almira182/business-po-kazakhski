@@ -1,0 +1,358 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #87CEEB; /* Light blue background similar to the prototype */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.screen {
+    display: none;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* Main Menu Screen */
+.menu-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.game-logo {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 80%;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    max-width: 200px;
+}
+
+.rules-button {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    max-width: 200px;
+}
+
+.houses-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 30%;
+}
+
+.houses-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    max-width: 30%;
+}
+
+/* Preparation Screen */
+.preparation-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.preparation-title {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 80%;
+}
+
+.preparation-content {
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    top: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.player-count-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+    margin-top: 150px;
+    margin-bottom: 40px;
+    gap: 15px;
+    
+}
+
+.player-count-label {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+.player-count-option {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.player-count-option:hover {
+    transform: scale(1.1);
+}
+
+.player-count-option.selected {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.color-selection-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.color-selection-label {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.color-selection-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.color-option {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.color-option:hover {
+    transform: scale(1.05);
+}
+
+.go-button {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    max-width: 200px;
+}
+
+/* Game Rules Screen */
+.rules-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.rules-header {
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 10px 30px;
+    margin: 20px 0 40px;
+}
+
+.rules-header h1 {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.rules-content {
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 800px;
+    height: 70%;
+    overflow-y: auto;
+    position: relative;
+}
+
+.rules-text {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.rules-text p {
+    margin-bottom: 10px;
+}
+
+.back-button {
+    display: block;
+    margin: 20px auto;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+}
+
+/* Game Board Screen */
+.board-container {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-color: #B9E8B6;
+}
+
+.board-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 70%;
+    max-height: 70%;
+    z-index: 1;
+}
+
+.player-cards {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.player-card {
+    position: absolute;
+    width: 180px;
+    height: auto;
+}
+
+#player1-card {
+    top: 20px;
+    left: 20px;
+}
+
+#player2-card {
+    top: 20px;
+    right: 20px;
+}
+
+#player3-card {
+    bottom: 20px;
+    left: 20px;
+}
+
+#player4-card {
+    bottom: 20px;
+    right: 20px;
+}
+
+.game-status {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2;
+}
+
+.active-player {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.dice-section {
+    margin-bottom: 10px;
+}
+
+#roll-dice-button {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#roll-dice-button:hover {
+    transform: scale(1.05);
+}
+
+.status-message {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+#buy-button, #end-turn-button {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+#buy-button:hover, #end-turn-button:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .player-card {
+        width: 150px;
+    }
+    
+    .board-image {
+        max-width: 90%;
+        max-height: 60%;
+    }
+    
+    .game-status {
+        width: 90%;
+    }
+}

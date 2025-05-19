@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бизнес по-казахски - Monopoly Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Main Menu Screen -->
+    <div id="main-menu" class="screen active">
+        <div class="menu-container">
+            <img src="assets/image2.png" alt="Game Logo" class="game-logo">
+            <img src="assets/Group1.svg" alt="Play Button" id="play-button" class="play-button">
+            <img src="assets/Group2.svg" alt="Game Rules Button" id="rules-button" class="rules-button">
+            <img src="assets/Group3.svg" alt="Houses Left" class="houses-left">
+            <img src="assets/Group4.svg" alt="Houses Right" class="houses-right">
+        </div>
+    </div>
+
+    <!-- Preparation Screen -->
+    <div id="preparation" class="screen">
+        <div class="preparation-container">
+            <img src="assets/Group6.svg" alt="Preparation Title" class="preparation-title">
+            
+            <div class="preparation-content">
+                <div class="player-count-section">
+                    <span class="player-count-label">NUMBER OF PLAYERS</span>
+                    <img src="assets/var1.svg" alt="1 Player" class="player-count-option" data-count="1">
+                    <img src="assets/var2.svg" alt="2 Players" class="player-count-option" data-count="2">
+                    <img src="assets/var3.svg" alt="3 Players" class="player-count-option" data-count="3">
+                    <img src="assets/var4.svg" alt="4 Players" class="player-count-option" data-count="4">
+                </div>
+                
+                <div class="color-selection-section">
+                    <div class="color-selection-label">CHOOSE A COLOR</div>
+                    <div class="color-selection-grid">
+                        <img src="assets/Group-8.svg" alt="Player 1" class="color-option" data-player="1" data-color="red">
+                        <img src="assets/Group-8.svg" alt="Player 2" class="color-option" data-player="2" data-color="red">
+                        <img src="assets/Group-8.svg" alt="Player 3" class="color-option" data-player="3" data-color="red">
+                        <img src="assets/Group-8.svg" alt="Player 4" class="color-option" data-player="4" data-color="red">
+                    </div>
+                </div>
+                
+                <img src="assets/go-button.svg" alt="Go Button" id="go-button" class="go-button">
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Rules Screen -->
+    <div id="game-rules" class="screen">
+        <div class="rules-container">
+            <div class="rules-header">
+                <h1>GAME RULES</h1>
+            </div>
+            <div class="rules-content">
+                <div class="rules-text">
+                    <h2>Game Rules</h2>
+
+                    <h3>🎯 Цель игры</h3>
+                    <p>Победи, доведя других игроков до банкротства, скупая улицы, взимая аренду и развивая свою собственность.</p>
+
+                    <h3>🧑‍🤝‍🧑 Участники</h3>
+                    <p>В игре участвует от <strong>1 до 4 игроков</strong>. Все игроки ходят <strong>по очереди с одного устройства</strong>, выбирая цвет перед началом.</p>
+
+                    <h3>🏁 Начало игры</h3>
+                    <p>Каждый игрок получает $1500. При каждом прохождении клетки «Старт» игрок получает <strong>$200</strong>.</p>
+
+                    <h3>🎲 Ход игрока</h3>
+                    <ul>
+                        <li>Нажми кнопку <strong>«Roll Dice»</strong>.</li>
+                        <li>Фишка автоматически переместится по полю.</li>
+                        <li>Результат зависит от клетки:
+                        <ul>
+                            <li>Свободная улица → можно купить</li>
+                            <li>Чужая → плата за аренду</li>
+                            <li>Шанс / Общественная казна → карточка</li>
+                            <li>Тюрьма / Налоги → соответствующие действия</li>
+                        </ul>
+                        </li>
+                    </ul>
+
+                    <h3>🏠 Собственность и постройки</h3>
+                    <p>Игрок может покупать улицы и строить дома, если владеет всеми улицами одного цвета. 4 дома можно обменять на отель.</p>
+
+                    <h3>💸 Аренда</h3>
+                    <p>Если другой игрок попадает на вашу клетку, он платит аренду. Чем больше построек — тем выше сумма.</p>
+
+                    <h3>💼 Тюрьма</h3>
+                    <ul>
+                        <li>Попасть можно по карточке, клетке, или за 3 дубля подряд.</li>
+                        <li>Выход: $50, карточка или дубль.</li>
+                    </ul>
+
+                    <h3>🔁 Завершение хода</h3>
+                    <p>Нажми кнопку <strong>«End Turn»</strong>, чтобы передать ход следующему игроку.</p>
+
+                    <h3>💳 Сделки</h3>
+                    <p>Через кнопку <strong>«Trade»</strong> можно обменяться собственностью, купить или продать улицу.</p>
+
+                    <h3>💥 Банкротство</h3>
+                    <p>Если игрок не может оплатить долг, он банкрот и выбывает. Его имущество передаётся банку или кредитору.</p>
+
+                    <h3>🏆 Победа</h3>
+                    <p>Побеждает последний игрок, у которого остались деньги и собственность.</p>
+                    </div>
+
+            </div>
+            <button id="back-to-menu" class="back-button">BACK TO MENU</button>
+        </div>
+    </div>
+
+    <!-- Game Board Screen -->
+    <div id="game-board" class="screen">
+        <div class="board-container">
+            <img src="assets/MonopoBoard.svg" alt="Monopoly Board" class="board-image">
+            
+            <div class="player-cards">
+                <img src="assets/card1.svg" alt="Player 1 Card" class="player-card" id="player1-card">
+                <img src="assets/card1.svg" alt="Player 2 Card" class="player-card" id="player2-card">
+                <img src="assets/card3.svg" alt="Player 3 Card" class="player-card" id="player3-card">
+                <img src="assets/card4.svg" alt="Player 4 Card" class="player-card" id="player4-card">
+            </div>
+            
+            <div class="game-status">
+                <div class="active-player">PLAYER 1</div>
+                <div class="dice-section">
+                    <img src="assets/button-dice.svg" alt="Roll Dice" id="roll-dice-button">
+                </div>
+                <div class="status-message">
+                    <p>YOU HAVE ENTERED GOGOL FIELD</p>
+                </div>
+                <div class="action-buttons">
+                    <img src="assets/button-buy.svg" alt="Buy" id="buy-button">
+                    <img src="assets/button-endturn.svg" alt="End Turn" id="end-turn-button">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
